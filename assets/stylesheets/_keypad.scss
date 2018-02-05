@@ -1,0 +1,102 @@
+.delete-key {
+  @extend %centered-in-grid-area;
+  grid-column: 1 / 5;
+  grid-row: 3 / 4;
+  background-color: orange;
+}
+
+.keypad__seven {
+  @extend %centered-in-grid-area;
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+.keypad__eight {
+  @extend %centered-in-grid-area;
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+.keypad__nine {
+  @extend %centered-in-grid-area;
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+}
+
+.keypad__four {
+  @extend %centered-in-grid-area;
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+}
+
+.keypad__five {
+  @extend %centered-in-grid-area;
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+.keypad__six {
+  @extend %centered-in-grid-area;
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
+}
+
+.keypad__one {
+  @extend %centered-in-grid-area;
+  grid-column: 1 / 2;
+  grid-row: 6 / 7;
+}
+
+.keypad__two {
+  @extend %centered-in-grid-area;
+  grid-column: 2 / 3;
+  grid-row: 6 / 7;
+}
+
+.keypad__three {
+  @extend %centered-in-grid-area;
+  grid-column: 3 / 4;
+  grid-row: 6 / 7;
+}
+
+.keypad__decimal {
+  @extend %centered-in-grid-area;
+  grid-column: 1 / 2;
+  grid-row: 7 / 8;
+}
+
+.keypad__zero {
+  @extend %centered-in-grid-area;
+  grid-column: 2 / 3;
+  grid-row: 7 / 8;
+}
+
+.keypad__equal {
+  @extend %centered-in-grid-area;
+  grid-column: 3 / 4;
+  grid-row: 7 / 8;
+}
+
+.keypad__divide {
+  @extend %centered-in-grid-area;
+  grid-column: 4 / 5;
+  grid-row: 4 / 5;
+}
+
+.keypad__multiply {
+  @extend %centered-in-grid-area;
+  grid-column: 4 / 5;
+  grid-row: 5 / 6;
+}
+
+.keypad__subtract {
+  @extend %centered-in-grid-area;
+  grid-column: 4 / 5;
+  grid-row: 6 / 7;
+}
+
+.keypad__add {
+  @extend %centered-in-grid-area;
+  grid-column: 4 / 5;
+  grid-row: 7 / 8;
+}
