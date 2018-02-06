@@ -87,3 +87,7 @@
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.keypad {
+  grid-column: 1 / 5;
+  grid-row: 4 / 8; }
