@@ -1,94 +1,111 @@
-.delete-key {
-  grid-column: 1 / 5;
-  grid-row: 3 / 4;
-  background-color: orange; }
-
-.keypad__seven {
+.key__seven {
   grid-column: 1 / 2;
   grid-row: 1 / 2; }
 
-.keypad__eight {
+.key__eight {
   grid-column: 2 / 3;
   grid-row: 1 / 2; }
 
-.keypad__nine {
+.key__nine {
   grid-column: 3 / 4;
   grid-row: 1 / 2; }
 
-.keypad__four {
+.key__four {
   grid-column: 1 / 2;
   grid-row: 2 / 3; }
 
-.keypad__five {
+.key__five {
   grid-column: 2 / 3;
   grid-row: 2 / 3; }
 
-.keypad__six {
+.key__six {
   grid-column: 3 / 4;
   grid-row: 2 / 3; }
 
-.keypad__one {
+.key__one {
   grid-column: 1 / 2;
   grid-row: 3 / 4; }
 
-.keypad__two {
+.key__two {
   grid-column: 2 / 3;
   grid-row: 3 / 4; }
 
-.keypad__three {
+.key__three {
   grid-column: 3 / 4;
   grid-row: 3 / 4; }
 
-.keypad__decimal {
+.key__decimal {
   grid-column: 1 / 2;
   grid-row: 4 / 5; }
 
-.keypad__zero {
+.key__zero {
   grid-column: 2 / 3;
   grid-row: 4 / 5; }
 
-.keypad__equal {
+.key__equal {
   grid-column: 3 / 4;
   grid-row: 4 / 5; }
 
-.keypad__divide {
-  grid-column: 4 / 5;
+.key__divide {
+  grid-column: 1 / 2;
   grid-row: 1 / 2; }
 
-.keypad__multiply {
-  grid-column: 4 / 5;
+.key__multiply {
+  grid-column: 1 / 2;
   grid-row: 2 / 3; }
 
-.keypad__subtract {
-  grid-column: 4 / 5;
+.key__subtract {
+  grid-column: 1 / 2;
   grid-row: 3 / 4; }
 
-.keypad__add {
-  grid-column: 4 / 5;
+.key__add {
+  grid-column: 1 / 2;
   grid-row: 4 / 5; }
 
 #container {
   position: absolute;
   display: grid;
-  left: 33%;
-  width: 34%;
+  left: 35%;
+  width: 30%;
   height: 600px; }
 
 .calculator {
   grid-template-columns: repeat(4, auto);
   grid-template-rows: repeat(7, auto); }
 
-.display {
+#display {
   grid-column: 1 / 5;
   grid-row: 1 / 3;
-  background-color: gray; }
+  background-color: whitesmoke; }
 
-.delete-key, .keypad__seven, .keypad__eight, .keypad__nine, .keypad__four, .keypad__five, .keypad__six, .keypad__one, .keypad__two, .keypad__three, .keypad__decimal, .keypad__zero, .keypad__equal, .keypad__divide, .keypad__multiply, .keypad__subtract, .keypad__add {
+.key {
   display: flex;
   align-items: center;
   justify-content: center; }
 
-.keypad {
+.key {
+  font-family: 'Encoded Sans Expanded', sans-serif;
+  font-size: 2em;
+  line-height: 50%; }
+
+.clear-key {
+  grid-column: 1 / 5;
+  grid-row: 3 / 4;
+  background-color: orange;
+  color: #282828; }
+
+#keypad {
   display: grid;
   grid-column: 1 / 5;
-  grid-row: 4 / 8; }
+  grid-row: 4 / 8;
+  color: white; }
+  #keypad #keypad__left {
+    display: grid;
+    grid-column: 1 / 4;
+    grid-row: 1 / 5;
+    background-color: #282828; }
+  #keypad #keypad_right {
+    display: grid;
+    grid-column: 4 / 5;
+    grid-row: 1 / 5;
+    background-color: gray; }

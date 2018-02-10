@@ -1,102 +1,79 @@
-.delete-key {
-  @extend %centered-in-grid-area;
-  grid-column: 1 / 5;
-  grid-row: 3 / 4;
-  background-color: orange;
-}
-
-.keypad__seven {
-  @extend %centered-in-grid-area;
+.key__seven {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
 
-.keypad__eight {
-  @extend %centered-in-grid-area;
+.key__eight {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
 }
 
-.keypad__nine {
-  @extend %centered-in-grid-area;
+.key__nine {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
 }
 
-.keypad__four {
-  @extend %centered-in-grid-area;
+.key__four {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 }
 
-.keypad__five {
-  @extend %centered-in-grid-area;
+.key__five {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
 
-.keypad__six {
-  @extend %centered-in-grid-area;
+.key__six {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 }
 
-.keypad__one {
-  @extend %centered-in-grid-area;
+.key__one {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
 }
 
-.keypad__two {
-  @extend %centered-in-grid-area;
+.key__two {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
 }
 
-.keypad__three {
-  @extend %centered-in-grid-area;
+.key__three {
   grid-column: 3 / 4;
   grid-row: 3 / 4;
 }
 
-.keypad__decimal {
-  @extend %centered-in-grid-area;
+.key__decimal {
   grid-column: 1 / 2;
   grid-row: 4 / 5;
 }
 
-.keypad__zero {
-  @extend %centered-in-grid-area;
+.key__zero {
   grid-column: 2 / 3;
   grid-row: 4 / 5;
 }
 
-.keypad__equal {
-  @extend %centered-in-grid-area;
+.key__equal {
   grid-column: 3 / 4;
   grid-row: 4 / 5;
 }
 
-.keypad__divide {
-  @extend %centered-in-grid-area;
-  grid-column: 4 / 5;
+.key__divide {
+  grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
 
-.keypad__multiply {
-  @extend %centered-in-grid-area;
-  grid-column: 4 / 5;
+.key__multiply {
+  grid-column: 1 / 2;
   grid-row: 2 / 3;
 }
 
-.keypad__subtract {
-  @extend %centered-in-grid-area;
-  grid-column: 4 / 5;
+.key__subtract {
+  grid-column: 1 / 2;
   grid-row: 3 / 4;
 }
 
-.keypad__add {
-  @extend %centered-in-grid-area;
-  grid-column: 4 / 5;
+.key__add {
+  grid-column: 1 / 2;
   grid-row: 4 / 5;
 }
