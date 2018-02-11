@@ -34,18 +34,18 @@ let memory = []
 function sendToDisplay() {
   keys.forEach((key) => {
     key.addEventListener('click', (e) => {
-      let keyText = e.target.innerText.toLowerCase()
+      let key = e.target.innerText.toLowerCase()
       
-      if (keyText == 'clear') {
+      if (key == 'clear') {
         clearAll()
       } 
-      else if (operators.test(keyText)) {
-        addToMemory(keyText)
+      else if (operators.test(key)) {
+        addToMemory(key)
       } 
-      else if (keyText == '.') {
-        addDecimal(keyText)
+      else if (key == '.') {
+        addDecimal(key)
       } 
-      else if (keyText == '=') {
+      else if (key == '=') {
         let currentMemory = display.textContent.split(' ')
         let newNumber = parseInt(currentMemory.pop())
 
@@ -56,7 +56,7 @@ function sendToDisplay() {
         memory = []
       } 
       else {
-        addDigit(keyText)
+        addDigit(key)
       }
     })
   });
@@ -67,23 +67,23 @@ function clearAll() {
   memory = []
 }
 
-function addToMemory(keyText) {
+function addToMemory(key) {
   // Add the last number on screen, then the operator
   memory.push(parseInt(display.textContent))
-  memory.push(keyText)
-  display.textContent += (' ' + keyText + ' ')
+  memory.push(key)
+  display.textContent += (' ' + key + ' ')
 }
 
-function addDecimal(keyText) {
-  if (!decimal.test(display.textContent)) display.textContent += keyText
+function addDecimal(key) {
+  if (!decimal.test(display.textContent)) display.textContent += key
 }
 
-function addDigit(keyText) {
+function addDigit(key) {
   if (operators.test(memory[-1])) {
-    display.textContent += ' ' + keyText
+    display.textContent += ' ' + key
   }
   else {
-    display.textContent += keyText 
+    display.textContent += key 
   }
 }
 
