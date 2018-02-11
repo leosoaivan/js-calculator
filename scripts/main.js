@@ -20,16 +20,16 @@ let operate = (string, a, b) => {
       return divide(a, b);
       break;
     default:
-      return "Please try again";
+      return "";
   }
 }
 
 const keys = Array.from(document.querySelectorAll('.key'))
-const display = document.querySelector('#display')
+const display = document.querySelector('#display__text')
 const operators = /x|\+|-|\//
 const equals = /\=/
 const decimal = /\./
-let calculation = []
+let memory = []
 
 function sendToDisplay() {
   keys.forEach((key) => {
@@ -38,34 +38,53 @@ function sendToDisplay() {
       
       if (keyText == 'clear') {
         clearAll()
-      } else if (operators.test(keyText)) {
-        calculation.push(parseInt(display.textContent))
-        calculation.push(keyText)
-
-        display.textContent = ''
-      } else if (keyText == '.') {
+      } 
+      else if (operators.test(keyText)) {
+        addToMemory(keyText)
+      } 
+      else if (keyText == '.') {
         addDecimal(keyText)
-      } else if (keyText == '=') {
-        calculation.push(parseInt(display.textContent))
-        result = operate(calculation[1], calculation[0], calculation[2])
+      } 
+      else if (keyText == '=') {
+        let currentMemory = display.textContent.split(' ')
+        let newNumber = parseInt(currentMemory.pop())
+
+        memory.push(newNumber)
+        result = operate(memory[1], memory[0], memory[2])
         
         display.textContent = result
-      } else {
-        display.textContent += keyText 
+        memory = []
+      } 
+      else {
+        addDigit(keyText)
       }
-
-      console.log(calculation)
     })
   });
 }
 
 function clearAll() {
   display.textContent = '';
-  calculation = []
+  memory = []
+}
+
+function addToMemory(keyText) {
+  // Add the last number on screen, then the operator
+  memory.push(parseInt(display.textContent))
+  memory.push(keyText)
+  display.textContent += (' ' + keyText + ' ')
 }
 
 function addDecimal(keyText) {
   if (!decimal.test(display.textContent)) display.textContent += keyText
+}
+
+function addDigit(keyText) {
+  if (operators.test(memory[-1])) {
+    display.textContent += ' ' + keyText
+  }
+  else {
+    display.textContent += keyText 
+  }
 }
 
 sendToDisplay();
