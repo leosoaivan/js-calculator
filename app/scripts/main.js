@@ -40,20 +40,13 @@ function sendToDisplay() {
         clearAll()
       } 
       else if (operators.test(key)) {
-        addToMemory(key)
+        addNumberToMemory(key)
       } 
       else if (key == '.') {
         addDecimal(key)
       } 
       else if (key == '=') {
-        let currentMemory = display.textContent.split(' ')
-        let newNumber = parseInt(currentMemory.pop())
-
-        memory.push(newNumber)
-        result = operate(memory[1], memory[0], memory[2])
-        
-        display.textContent = result
-        memory = []
+        calculateFromMemory()
       } 
       else {
         addDigit(key)
@@ -67,15 +60,17 @@ function clearAll() {
   memory = []
 }
 
-function addToMemory(key) {
+function addNumberToMemory(key) {
   // Add the last number on screen, then the operator
-  memory.push(parseInt(display.textContent))
+  memory.push(parseFloat(display.textContent))
   memory.push(key)
   display.textContent += (' ' + key + ' ')
 }
 
 function addDecimal(key) {
-  if (!decimal.test(display.textContent)) display.textContent += key
+  if (!decimal.test((display.textContent).match(/\d+\.\d+$/))) {
+    display.textContent += key
+  }
 }
 
 function addDigit(key) {
@@ -85,6 +80,17 @@ function addDigit(key) {
   else {
     display.textContent += key 
   }
+}
+
+function calculateFromMemory() {
+  let currentMemory = display.textContent.split(' ')
+  let newNumber = parseFloat(currentMemory.pop())
+
+  memory.push(newNumber)
+  result = operate(memory[1], memory[0], memory[2])
+  
+  display.textContent = result
+  memory = []
 }
 
 sendToDisplay();
