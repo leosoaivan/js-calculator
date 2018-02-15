@@ -35,6 +35,8 @@ function sendToDisplay() {
   keys.forEach((key) => {
     key.addEventListener('click', (e) => {
       let key = e.target.innerText.toLowerCase()
+
+      console.log(key)
       
       if (key == 'clear') {
         clearAll()
@@ -80,6 +82,8 @@ function addDecimal(key) {
 function addDigit(key) {
   let lastItem = display.textContent.slice(-1)
 
+  console.log(isOperator(lastItem))
+
   if (isOperator(lastItem)) {
     display.textContent += (' ' + key)
   }
@@ -96,7 +100,7 @@ function isOperator(input) {
 function calculateFromMemory() {
   addNumberToMemory()
   result = operate(memory[1], memory[0], memory[2])  
-  display.textContent = result
+  display.textContent = result.toExponential(5)
   memory = []
 }
 
